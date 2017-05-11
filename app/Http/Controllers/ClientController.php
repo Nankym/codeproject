@@ -51,7 +51,8 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        Client::find($id)->update($request->all());
+        return Client::find($id);
     }
 
     /**
@@ -62,6 +63,6 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        Client::find($id)->delete();
+       return Client::find($id)->delete();
     }
 }
